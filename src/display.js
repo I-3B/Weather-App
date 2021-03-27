@@ -17,7 +17,7 @@ export function NewCard(data) {
         <div id="weather-details">
             <div id="feels-like">Feels like: ${data.tempFeelLike}&deg</div>
             <div id="humidity">Humidity: ${data.humidity}%</div>
-            <div id="wind-speed">Wind speed: ${data.windSpeed} MPH</div>
+            <div id="wind-speed">Wind speed: ${data.windSpeed} m/s</div>
         </div>
     </div>`;
 }
