@@ -10,7 +10,7 @@ export function NewCard(data) {
             <span>${data.weatherDescription}</span>
             <img
                 id="weather-image"
-                src="http://openweathermap.org/img/wn/${data.weatherIcon}.png"
+                src="https://openweathermap.org/img/wn/${data.weatherIcon}.png"
             />
         </div>
         <div id="temperature">${data.temp}&deg</div>
