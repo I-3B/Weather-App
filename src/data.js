@@ -2,10 +2,13 @@ import { displayError, NewCard } from './display';
 
 async function getWeather(cityName) {
     try {
-        let respone = await fetch(
-            `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=6e52078bfa4e5a4c88730f298ad0b842&units=metric`,
-            { mode: 'cors' }
-        );
+        let url = '';
+        if (location.protocol === 'http:') {
+            url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=6e52078bfa4e5a4c88730f298ad0b842&units=metric`;
+        } else {
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=6e52078bfa4e5a4c88730f298ad0b842&units=metric`;
+        }
+        let respone = await fetch(url, { mode: 'cors' });
         let raw = await respone.json();
         if (raw.message) throw new Error(raw.message);
         let data = getData(raw);
