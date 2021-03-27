@@ -26,7 +26,7 @@ export function displayError(msg) {
     errorMessage.textContent = msg;
 }
 input.addEventListener('keyup', (e) => {
-    if (e.code === 'Enter') {
+    if (e.keyCode === 13) {
         errorMessage.setAttribute('style', ' visibility:hidden');
         getWeather(input.value);
     }
